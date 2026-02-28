@@ -14,15 +14,7 @@ Food Bank Filter adds a right-side RuneLite panel to:
 
 ## Run locally (dev client)
 
-```bash
-./gradlew run
-```
-
-Windows PowerShell:
-
-```powershell
-.\gradlew run
-```
+Run `FoodBankFilterPluginTest` from your IDE (IntelliJ) for local testing.
 
 ## Support
 

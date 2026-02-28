@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
 repositories {
@@ -15,7 +14,6 @@ def runeLiteVersion = 'latest.release'
 
 dependencies {
     compileOnly group: 'net.runelite', name: 'client', version: runeLiteVersion
-    runtimeOnly group: 'net.runelite', name: 'client', version: runeLiteVersion
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
@@ -30,11 +28,6 @@ version = '1.0.0'
 java {
     sourceCompatibility = JavaVersion.VERSION_11
     targetCompatibility = JavaVersion.VERSION_11
-}
-
-application {
-    mainClass = 'com.foodbankfilter.FoodBankFilterPluginTest'
-    applicationDefaultJvmArgs = ['-ea']
 }
 
 tasks.withType(JavaCompile).configureEach {
