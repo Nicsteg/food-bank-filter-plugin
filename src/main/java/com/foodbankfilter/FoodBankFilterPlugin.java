@@ -14,8 +14,8 @@ import net.runelite.api.Client;
 import net.runelite.api.ItemComposition;
 import net.runelite.api.events.ClientTick;
 import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.widgets.ComponentID;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -196,13 +196,13 @@ public class FoodBankFilterPlugin extends Plugin
 
     private boolean isBankOpen()
     {
-        Widget bankContainer = client.getWidget(WidgetInfo.BANK_ITEM_CONTAINER);
+        Widget bankContainer = client.getWidget(ComponentID.BANK_ITEM_CONTAINER);
         return bankContainer != null && !bankContainer.isHidden();
     }
 
     private void applyFoodFilterCompact()
     {
-        Widget bankContainer = client.getWidget(WidgetInfo.BANK_ITEM_CONTAINER);
+        Widget bankContainer = client.getWidget(ComponentID.BANK_ITEM_CONTAINER);
         if (bankContainer == null)
         {
             return;
@@ -284,7 +284,7 @@ public class FoodBankFilterPlugin extends Plugin
     {
         compactSlotPositions.clear();
 
-        Widget bankContainer = client.getWidget(WidgetInfo.BANK_ITEM_CONTAINER);
+        Widget bankContainer = client.getWidget(ComponentID.BANK_ITEM_CONTAINER);
         if (bankContainer == null)
         {
             return;
@@ -317,7 +317,7 @@ public class FoodBankFilterPlugin extends Plugin
 
     private void unhideAndRelayoutBankItems()
     {
-        Widget bankContainer = client.getWidget(WidgetInfo.BANK_ITEM_CONTAINER);
+        Widget bankContainer = client.getWidget(ComponentID.BANK_ITEM_CONTAINER);
         if (bankContainer != null)
         {
             Widget[] children = bankContainer.getDynamicChildren();
