@@ -12,9 +12,13 @@ repositories {
 
 def runeLiteVersion = 'latest.release'
 
+configurations {
+    devRuntime
+}
+
 dependencies {
     compileOnly group: 'net.runelite', name: 'client', version: runeLiteVersion
-    runtimeOnly group: 'net.runelite', name: 'client', version: runeLiteVersion
+    devRuntime group: 'net.runelite', name: 'client', version: runeLiteVersion
     compileOnly 'org.projectlombok:lombok:1.18.30'
     annotationProcessor 'org.projectlombok:lombok:1.18.30'
 
@@ -36,5 +40,13 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 tasks.withType(JavaExec).configureEach {
+    jvmArgs '-ea'
+}
+
+tasks.register('runDev', JavaExec) {
+    group = 'application'
+    description = 'Run RuneLite with this plugin loaded for local development'
+    classpath = sourceSets.main.runtimeClasspath + configurations.devRuntime
+    mainClass = 'com.foodbankfilter.FoodBankFilterPluginTest'
     jvmArgs '-ea'
 }
