@@ -1,0 +1,3 @@
+# Copy this file into the RuneLite plugin-hub repository at: plugins/food-bank-filter
+repository=https://github.com/<YOUR_GITHUB_USER>/<YOUR_REPO>
+commit=<FULL_40_CHAR_COMMIT_SHA>

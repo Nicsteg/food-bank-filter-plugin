@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a bug in Food Bank Filter
+title: "[Bug] "
+labels:
+  - bug
+body:
+  - type: input
+    id: runelite_version
+    attributes:
+      label: RuneLite version
+      placeholder: e.g. 1.12.18
+    validations:
+      required: true
+
+  - type: input
+    id: plugin_version
+    attributes:
+      label: Plugin version/commit
+      placeholder: e.g. commit abc1234
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide exact steps.
+      placeholder: |
+        1) Open bank
+        2) Enable filter
+        3) ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshot / GIF / log snippet
+      description: Optional but very helpful.
